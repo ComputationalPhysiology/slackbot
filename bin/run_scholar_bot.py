@@ -13,10 +13,15 @@ import scholar_bot
 channels = {'comphy': 'CGGTT3GE6'}
 
 def load_yaml_file(fname):
+
+    if hasattr(yaml, 'FullLoader'):
+        kwargs = dict(Loader=yaml.FullLoader)
+    else:
+        kwargs = {}
     
     if os.path.isfile(fname):
         with open(fname, 'r') as f:
-            d = yaml.load(f, Loader=yaml.FullLoader)
+            d = yaml.load(f, **kwargs)
     else:
         d = {}
     return d
