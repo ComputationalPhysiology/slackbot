@@ -10,7 +10,7 @@ files = config.read([
     './scholarbot.ini',
     os.path.join(here, 'scholarbot.ini'),
     os.path.expanduser('~/scholarbot.ini'),
-    os.path.expanduser('~/.scholarbotrc')])
+    os.path.expanduser('~/.scholarbot/config')])
 
 SLACK_TOKEN = config.get(
     'SLACK_BOT_TOKEN', 'token')

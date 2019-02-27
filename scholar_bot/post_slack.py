@@ -3,7 +3,7 @@
 
 from slackclient import SlackClient
 
-from config import SLACK_TOKEN
+from .config import SLACK_TOKEN
 
 
 class SlackPoster:
