@@ -11,11 +11,16 @@ R-package.
 You need python >= 3.6.
 Create a virtual environment
 ```
-python -m virtualenv venv
+python3 -m virtualenv venv
 source venv/bin/activate
 ```
 
-install the bot
+install the dependencies
+```
+pip install -r requirements.txt
+```
+
+and install the bot
 ```
 python setup.py install
 ```
