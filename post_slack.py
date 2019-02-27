@@ -18,8 +18,7 @@ class SlackPoster:
                 channel=ch,
                 text=message,
                 as_user=False,
-                username='scholarbot',
-                icon_emoji=':star2:'
+                username='scholarbot'
             )
 
 

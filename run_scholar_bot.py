@@ -6,6 +6,8 @@ import datetime
 from post_slack import post_to_slack
 import scholar_bot
 
+channels = {'comphy': 'CGGTT3GE6'}
+
 def load_yaml_file(fname):
     
     if os.path.isfile(fname):
@@ -59,7 +61,7 @@ def compute_todays_impact():
     for (title, cites) in all_stars:
         message += [f'{N_all_stars}: {title} ({cites:2.1f})']
         N_all_stars = N_all_stars - 1
-    message += [f"\nThe rising stars (most cited-per-year papers not older than {max_years} years)) are:"]
+    message += [f"\nThe rising stars (most cited-per-year papers not older than {max_years} years) are:"]
     for (title, cites) in rising_stars:
         message += [f'{N_rising_stars}: {title} ({cites:2.1f})']
         N_rising_stars = N_rising_stars - 1
@@ -68,5 +70,5 @@ def compute_todays_impact():
 if __name__ == "__main__":
     message = compute_todays_impact()
     print(message)
-    post_to_slack(message, ["comphy",])
+    post_to_slack(message, [channels['comphy'],])
     print("Success!")
