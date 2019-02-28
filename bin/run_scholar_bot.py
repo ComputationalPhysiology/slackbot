@@ -113,7 +113,7 @@ def main_func(args):
     print(message)
     if args['post_to_slack']:
         print('post to slack!')
-        # scholarbot.post_to_slack(message, [channels['comphy'],])
+        scholarbot.post_to_slack(message, [channels['comphy'],])
     print("Success!")
 
 if __name__ == "__main__":
