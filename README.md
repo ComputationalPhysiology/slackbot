@@ -1,7 +1,7 @@
 # ScholarBot
 
 This is the Slack bot used to post updates about citations for the
-Computational Phyisoligy department at Simula.
+Computational Physiology department at Simula.
 The ScholarBot is highly inspired by the
 [impact_bot](https://github.com/meg-simula/impact-bot), but is based
 only one python (as opposed to the `impact_bot` which uses an
