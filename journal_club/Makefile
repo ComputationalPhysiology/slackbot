@@ -3,7 +3,8 @@ filename=journal_club
 
 default:
 	pdflatex ${filename}
-	bibtex ${filename}
+	bibtex mechanics
+	bibtex patient_specific
 	pdflatex ${filename}
 	pdflatex ${filename}
 

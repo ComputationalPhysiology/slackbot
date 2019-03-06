@@ -1,8 +1,23 @@
 \documentclass{article}
+\usepackage{multibbl}
+
+
+\newbibliography{mechanics}
+\newbibliography{patient_specific}
+
+
 \title{Journal Club papers}
+
 \begin{document}
   \maketitle
-  \nocite{*}
-  \bibliographystyle{plain}
-  \bibliography{journal_club.bib}
+
+  \nocite{mechanics}{*}
+  \bibliographystyle{mechanics}{plain}
+  \bibliography{mechanics}{mechanics.bib}{Mechanics}
+
+  \nocite{patient_specific}{*}
+  \bibliographystyle{patient_specific}{plain}
+  \bibliography{patient_specific}{patient_specific.bib}{Patient-specfic
+    modeling}
+  
 \end{document}
