@@ -11,11 +11,15 @@ def extract_scholar_publications(people):
 
         if id_ == '':
             continue
-        try:
-            info = next(scholarly.search_author(person)).fill()
-        except StopIteration:
-            print(f'Publications not found for {person}')
-        publications[id_] = info.publications
+        print(person, id_)
+        query = scholarly.search_author(person)
+        for q in query:
+            if q.id == id_:
+                info = q.fill()
+                #print([p.bib['title'] for p in info.publications])
+                #print('\n\n')
+                publications[id_] = info.publications
+                break
     return publications
 
 
