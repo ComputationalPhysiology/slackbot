@@ -14,10 +14,12 @@ if sys.version_info < (3, 6):
 
 version = "0.1"
 name = "scholar_bot"
-description = ("Post updates on Slack about citations "
-               "for the Computational Phyisoligy department at Simula")
-scripts = glob.glob("bin/*")
-requirements = ['slackclient', 'scholarly', 'pyyaml']
+description = (
+    "Post updates on Slack about citations "
+    "for the Computational Phyisoligy department at Simula"
+)
+scripts = []
+requirements = ["slackclient", "scholarly", "pyyaml"]
 
 if platform.system() == "Windows" or "bdist_wininst" in sys.argv:
     # In the Windows command prompt we can't execute Python scripts
@@ -33,7 +35,6 @@ if platform.system() == "Windows" or "bdist_wininst" in sys.argv:
     scripts.extend(batch_files)
 
 
-
 def run_install():
     "Run installation"
 
@@ -42,12 +43,13 @@ def run_install():
         name=name,
         description=description,
         version=version,
-        author='Henrik Finsberg',
+        author="Henrik Finsberg",
         license="MIT",
         author_email="henrikn@simula.no",
         platforms=["Windows", "Linux", "Solaris", "Mac OS-X", "Unix"],
         packages=["scholar_bot"],
         package_dir={"scholar_bot": "scholar_bot"},
+        entry_points={"console_scripts": ["scholar_bot=scholar_bot.__main__:main"]},
         # install_requires=requirements,
         scripts=scripts,
         zip_safe=False,
