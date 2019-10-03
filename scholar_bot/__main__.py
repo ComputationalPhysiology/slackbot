@@ -1,7 +1,4 @@
 #!/usr/bin/env python3
-__author__ = "Henrik Finsberg (henriknf@simula.no), 2017--2019"
-__maintainer__ = "Henrik Finsberg"
-__email__ = "henriknf@simula.no"
 """Slackbot for ComPhy
 
 Available arguments
@@ -9,26 +6,14 @@ Available arguments
 All these arguments can be called with '-h' or '--help' to see the
 additional options
 
-    post
-        Analyze a single mps file (nd2 or czi)
+    post_message
+        Post message
 
-    analyze_mps_all
-        Analyze all mps files in a folder by calling the analyze_mps
-        function on each file in the folder
+    conferences
+        Post upcoming conferences
 
-    mps_summary
-        Create a summary figure and csv file of all files in a folder
-
-    mps_motions_tracking
-        Performs motion trackiing on brightfield files in order to
-        estimate displacement and speed.
-
-    collect_mps
-        Prepare mps data for inversion by collecting voltage and calcium
-        tracing in a single file.
-
-    mps2mp4
-        Create movie of data file
+    impact
+        Post impact
 
 
 Available options
@@ -43,6 +28,9 @@ Contact
 Henrik Finsberg (henriknf@simula.no)
 
 """
+__author__ = "Henrik Finsberg (henriknf@simula.no), 2017--2019"
+__maintainer__ = "Henrik Finsberg"
+__email__ = "henriknf@simula.no"
 
 import sys
 import os
@@ -70,8 +58,9 @@ def main():
 
         print(__version__)
 
-    elif sys.argv[1] == "post":
-        pass
+    elif sys.argv[1] == "post_message":
+        message = sys.argv[2]
+        scholar_bot.post_to_slack(message, [channels["comphy"]])
 
     elif sys.argv[1] == "conferences":
         message = scholar_bot.get_upcoming_conferences(N=10)
