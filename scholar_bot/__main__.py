@@ -84,8 +84,6 @@ def main():
         scholar_bot.post_to_slack(message, [channels["comphy"]])
         print("Success!")
 
-        raise NotImplementedError
-
     else:
         print("Argument {} not recongnized".format(sys.argv[1]))
         print(__doc__)
