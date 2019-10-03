@@ -27,16 +27,17 @@ python setup.py install
 
 ## Running the bot
 
-You can run the bot using the script
+Now you should be able to do
 ```
-run_scholar_bot.py
+python -m scholar_bot post_message "Hello world"
 ```
-To see how to run it do
+and it will print "Hello world" to the slack channel.
+To list all other options you can type 
+
 ```
-run_scholar_bot.py --help
+python -m scholar_bot --help
 ```
 
-To actually post messages on Slack you need to pass the flag `--post_to_slack`
 Please consult the [Slack API](https://api.slack.com) for how to set
 up the bot. You can set you secret token either as an environment
 varialbe (`SLACK_BOT_TOKEN`) or in a config file. I have mine in a
